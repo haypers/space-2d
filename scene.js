@@ -67,14 +67,14 @@ export default class Scene {
 
     rand = random.rand(props.seed, 1000);
     let nebulaCount = 0;
-    if (props.renderNebulae) nebulaCount = Math.round(rand.random() * 4 + 1);
+    if (props.renderNebulae) nebulaCount = 1);
     let nebulaOut = pingPong(ping, ping, pong, nebulaCount, (source, destination) => {
       this.nebulaRenderer({
         source: source,
         destination: destination,
         offset: [rand.random() * 100, rand.random() * 100],
         scale: (rand.random() * 2 + 1) / scale,
-        color: [rand.random(), rand.random(), rand.random()],
+        color: [0, 0, 0],
         density: rand.random() * 0.2,
         falloff: rand.random() * 2.0 + 3.0,
         width: width,
